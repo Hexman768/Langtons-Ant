@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Langton_s_Ant.Window;
+using System;
 using System.Windows.Forms;
 
 namespace Langton_s_Ant
