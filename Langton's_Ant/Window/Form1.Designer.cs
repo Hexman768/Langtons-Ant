@@ -32,6 +32,7 @@
             this.frameTmr = new System.Windows.Forms.Timer(this.components);
             this.startBtn = new System.Windows.Forms.Button();
             this.stopBtn = new System.Windows.Forms.Button();
+            this.stepsLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // frameTmr
@@ -58,17 +59,28 @@
             this.stopBtn.UseVisualStyleBackColor = true;
             this.stopBtn.Click += new System.EventHandler(this.stopBtn_Click);
             // 
+            // stepsLbl
+            // 
+            this.stepsLbl.AutoSize = true;
+            this.stepsLbl.Location = new System.Drawing.Point(644, 124);
+            this.stepsLbl.Name = "stepsLbl";
+            this.stepsLbl.Size = new System.Drawing.Size(46, 13);
+            this.stepsLbl.TabIndex = 2;
+            this.stepsLbl.Text = "Steps: 0";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.stepsLbl);
             this.Controls.Add(this.stopBtn);
             this.Controls.Add(this.startBtn);
             this.Name = "mainForm";
             this.Text = "Langton\'s Ant";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.mainForm_Paint);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -77,6 +89,7 @@
         private System.Windows.Forms.Timer frameTmr;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button stopBtn;
+        private System.Windows.Forms.Label stepsLbl;
     }
 }
 

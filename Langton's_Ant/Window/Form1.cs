@@ -9,9 +9,7 @@ namespace Langton_s_Ant.Window
         private int rows;
         private int cols;
         private int size;
-
-        private int ax = 25;
-        private int ay = 25;
+        private int steps = 0;
 
         /// <summary>
         /// This method fixes the screen flickering caused by the constant repainting of the form.
@@ -36,9 +34,9 @@ namespace Langton_s_Ant.Window
         {
             InitializeComponent();
 
-            rows = 50;
-            cols = 50;
-            size = 10;
+            rows = 100;
+            cols = 100;
+            size = 5;
 
             game = new Game(rows, cols, size);
         }
@@ -61,6 +59,8 @@ namespace Langton_s_Ant.Window
         private void FrameTmr_Tick(object sender, EventArgs e)
         {
             game.Step();
+            steps++;
+            stepsLbl.Text = $"Steps: {steps}";
             Invalidate();
         }
     }

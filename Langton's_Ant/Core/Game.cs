@@ -24,7 +24,7 @@ namespace Langton_s_Ant.Core
             this.cellSize = cellSize;
             board = CreateBoard(rows, cols);
             this.rows = rows; this.cols = cols;
-            ant = new Ant(25, 25, Direction.NORTH);
+            ant = new Ant(50, 50, Direction.NORTH);
             rules.Add(new WhiteRule(0));
             rules.Add(new BlackRule(1));
         }
