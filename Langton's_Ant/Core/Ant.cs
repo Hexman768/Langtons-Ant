@@ -6,14 +6,9 @@
     public class Ant
     {
         /// <summary>
-        /// Location of <see cref="Ant"/> on the X axis.
+        /// Stores the ant's current position on the board.
         /// </summary>
-        public int X { get; set; }
-
-        /// <summary>
-        /// Location of <see cref="Ant"/> on the Y axis.
-        /// </summary>
-        public int Y { get; set; }
+        public Point position { get; set; }
 
         /// <summary>
         /// Direction the <see cref="Ant"/> is facing.
@@ -28,61 +23,8 @@
         /// <param name="dir">Direction ant is facing</param>
         public Ant(int x, int y, Direction dir)
         {
-            X = x;
-            Y = y;
+            position = new Point(x, y);
             direction = dir;
-        }
-
-        /// <summary>
-        /// Turns the <see cref="Ant"/> clockwise.
-        /// </summary>
-        public void TurnRight()
-        {
-            switch (direction)
-            {
-                case Direction.NORTH:
-                    X += 1;
-                    direction = Direction.EAST;
-                    break;
-                case Direction.SOUTH:
-                    X -= 1;
-                    direction = Direction.WEST;
-                    break;
-                case Direction.EAST:
-                    Y += 1;
-                    direction = Direction.SOUTH;
-                    break;
-                case Direction.WEST:
-                    Y -= 1;
-                    direction = Direction.NORTH;
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Turns the <see cref="Ant"/> counter-clockwise.
-        /// </summary>
-        public void TurnLeft()
-        {
-            switch (direction)
-            {
-                case Direction.NORTH:
-                    X -= 1;
-                    direction = Direction.WEST;
-                    break;
-                case Direction.SOUTH:
-                    X += 1;
-                    direction = Direction.EAST;
-                    break;
-                case Direction.EAST:
-                    Y -= 1;
-                    direction = Direction.NORTH;
-                    break;
-                case Direction.WEST:
-                    Y += 1;
-                    direction = Direction.SOUTH;
-                    break;
-            }
         }
     }
 }
