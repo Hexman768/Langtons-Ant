@@ -51,6 +51,7 @@
     <Compile Include="Core\Block.cs" />
     <Compile Include="Core\Board.cs" />
     <Compile Include="Core\Direction.cs" />
+    <Compile Include="Core\Extension.cs" />
     <Compile Include="Core\Point.cs" />
     <Compile Include="Core\Rule.cs" />
     <Compile Include="Core\WhiteRule.cs" />

@@ -4,33 +4,19 @@ using System.Windows.Forms;
 
 namespace Langton_s_Ant.Window
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
         private int rows;
         private int cols;
         private int size;
         private int steps = 0;
 
-        /// <summary>
-        /// This method fixes the screen flickering caused by the constant repainting of the form.
-        /// <see cref="https://stackoverflow.com/questions/8046560/how-to-stop-flickering-c-sharp-winforms"/>.
-        /// </summary>
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
-                return handleParam;
-            }
-        }
-
         Game game;
 
         /// <summary>
-        /// Constructs the <see cref="mainForm"/>.
+        /// Constructs the <see cref="MainForm"/>.
         /// </summary>
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -58,10 +44,22 @@ namespace Langton_s_Ant.Window
 
         private void FrameTmr_Tick(object sender, EventArgs e)
         {
-            game.Step();
-            steps++;
+            game.Step(); game.Step(); game.Step();
+            steps += 3;
             stepsLbl.Text = $"Steps: {steps}";
             Invalidate();
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            game = new Game(rows, cols, size);
+            stepsLbl.Text = $"Steps: 0";
+            Invalidate();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            Extension.DoubleBuffered(this, true);
         }
     }
 }

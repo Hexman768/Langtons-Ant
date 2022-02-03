@@ -1,6 +1,6 @@
 ﻿namespace Langton_s_Ant.Window
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             this.startBtn = new System.Windows.Forms.Button();
             this.stopBtn = new System.Windows.Forms.Button();
             this.stepsLbl = new System.Windows.Forms.Label();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // frameTmr
@@ -68,16 +69,28 @@
             this.stepsLbl.TabIndex = 2;
             this.stepsLbl.Text = "Steps: 0";
             // 
+            // clearBtn
+            // 
+            this.clearBtn.Location = new System.Drawing.Point(697, 70);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 3;
+            this.clearBtn.Text = "&Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.stepsLbl);
             this.Controls.Add(this.stopBtn);
             this.Controls.Add(this.startBtn);
             this.Name = "mainForm";
             this.Text = "Langton\'s Ant";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.mainForm_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -90,6 +103,7 @@
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button stopBtn;
         private System.Windows.Forms.Label stepsLbl;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
 
